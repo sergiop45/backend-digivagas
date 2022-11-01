@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { City, Prisma } from '@prisma/client';
 import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateCityDto } from './dto/create-city.dto';
 import { UpdateCityDto } from './dto/update-city.dto';
@@ -9,7 +10,7 @@ export class CityService {
   constructor(private readonly prisma: PrismaService) {}
 
   create(createCityDto: CreateCityDto) {
-    return '';
+    return this.prisma.city.create({data: createCityDto});
   }
 
   findAll() {
@@ -17,14 +18,14 @@ export class CityService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} city`;
+    return this.prisma.city.findUnique({where: {id: id}});
   }
 
   update(id: number, updateCityDto: UpdateCityDto) {
-    return `This action updates a #${id} city`;
+    return this.prisma.city.update({where: {id: id},data: updateCityDto});
   }
 
   remove(id: number) {
-    return `This action removes a #${id} city`;
+    return this.prisma.city.delete({where: {id: id}});
   }
 }
