@@ -16,11 +16,21 @@ model Vaga {
   description  String
   fone String
   city City   @relation(fields: [city_id], references: [id])
-  city_id Int 
+  city_id Int
+  user User   @relation(fields: [user_id], references: [id])
+  user_id Int
 }
 
 model City {
   id Int @id @default(autoincrement())
   name String
+  vagas Vaga[]
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  name String
+  email String
+  password String
   vagas Vaga[]
 }

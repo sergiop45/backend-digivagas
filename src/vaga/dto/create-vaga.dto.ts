@@ -5,4 +5,5 @@ export class CreateVagaDto {
     description: string
     fone: string
     city: Prisma.CityCreateNestedOneWithoutVagasInput
+    user: Prisma.UserCreateNestedOneWithoutVagasInput
 }
