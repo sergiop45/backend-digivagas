@@ -49,11 +49,8 @@ $ npm run start:prod
 ```bash
 Rota geral api:
 
-<<<<<<< HEAD
+
 /, GET 
-=======
-/, GET  
->>>>>>> beca4906727d81b4f209646ec859d52fc63f5cfe
 
 Controller vaga:
 
@@ -69,13 +66,8 @@ Controller city:
 /city, GET
 /city/:id, GET
 /city/:id, PATCH 
-<<<<<<< HEAD
 /city/:id, DELETE
 ```
-=======
-/city/:id, DELETE 
-
->>>>>>> beca4906727d81b4f209646ec859d52fc63f5cfe
 ## Test
 
 ```bash
