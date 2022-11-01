@@ -49,23 +49,23 @@ $ npm run start:prod
 
 Rota geral api:
 
-{/, GET} route 
+/, GET  
 
 Controller vaga:
 
-{/vaga, POST}
-{/vaga, GET} 
-{/vaga/:id, GET} 
-{/vaga/:id, PATCH} 
-{/vaga/:id, DELETE}
+/vaga, POST
+/vaga, GET
+/vaga/:id, GET
+/vaga/:id, PATCH 
+/vaga/:id, DELETE
 
 Controller city:
 
-{/city, POST} 
-{/city, GET} 
-{/city/:id, GET} 
-{/city/:id, PATCH} 
-{/city/:id, DELETE} 
+/city, POST 
+/city, GET
+/city/:id, GET
+/city/:id, PATCH 
+/city/:id, DELETE 
 
 ## Test
 
