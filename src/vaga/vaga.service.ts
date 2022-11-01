@@ -1,26 +1,29 @@
 import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/prisma/prisma.service';
 import { CreateVagaDto } from './dto/create-vaga.dto';
 import { UpdateVagaDto } from './dto/update-vaga.dto';
 
 @Injectable()
 export class VagaService {
+  constructor(private readonly prisma: PrismaService){}
+
   create(createVagaDto: CreateVagaDto) {
-    return 'This action adds a new vaga';
+    return this.prisma.vaga.create({data: createVagaDto});
   }
 
   findAll() {
-    return `This action returns all vaga`;
+    return this.prisma.vaga.findMany();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} vaga`;
+    return this.prisma.vaga.findUnique({where: {id: id}});
   }
 
   update(id: number, updateVagaDto: UpdateVagaDto) {
-    return `This action updates a #${id} vaga`;
+    return this.prisma.vaga.update({where: {id:id}, data:updateVagaDto});
   }
 
   remove(id: number) {
-    return `This action removes a #${id} vaga`;
+    return this.prisma.vaga.delete({where: {id: id}});
   }
 }
